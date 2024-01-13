@@ -29,7 +29,7 @@ class SQLiteManager {
 
   /// START READ QUERY CALLS
 
-  Future<List<GetAllAccountRow>> getAllAccount() => performGetAllAccount(
+  Future<List<GetAllAccountsRow>> getAllAccounts() => performGetAllAccounts(
         _database,
       );
 

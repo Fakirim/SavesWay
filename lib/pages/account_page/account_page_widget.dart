@@ -1,4 +1,3 @@
-import '/backend/sqlite/sqlite_manager.dart';
 import '/components/add_account_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -105,57 +104,6 @@ class _AccountPageWidgetState extends State<AccountPageWidget> {
           ],
           centerTitle: false,
           elevation: 2.0,
-        ),
-        body: SafeArea(
-          top: true,
-          child: FutureBuilder<List<GetAllAccountRow>>(
-            future: SQLiteManager.instance.getAllAccount(),
-            builder: (context, snapshot) {
-              // Customize what your widget looks like when it's loading.
-              if (!snapshot.hasData) {
-                return Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
-                  ),
-                );
-              }
-              final listViewGetAllAccountRowList = snapshot.data!;
-              return ListView.separated(
-                padding: EdgeInsets.fromLTRB(
-                  0,
-                  24.0,
-                  0,
-                  0,
-                ),
-                scrollDirection: Axis.vertical,
-                itemCount: listViewGetAllAccountRowList.length,
-                separatorBuilder: (_, __) => SizedBox(height: 8.0),
-                itemBuilder: (context, listViewIndex) {
-                  final listViewGetAllAccountRow =
-                      listViewGetAllAccountRowList[listViewIndex];
-                  return Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          listViewGetAllAccountRow.name,
-                          style: FlutterFlowTheme.of(context).bodyMedium,
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              );
-            },
-          ),
         ),
       ),
     );

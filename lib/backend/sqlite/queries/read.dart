@@ -8,23 +8,18 @@ Future<List<T>> _readQuery<T>(
 ) =>
     database.rawQuery(query).then((r) => r.map((e) => create(e)).toList());
 
-/// BEGIN GETALLACCOUNT
-Future<List<GetAllAccountRow>> performGetAllAccount(
+/// BEGIN GETALLACCOUNTS
+Future<List<GetAllAccountsRow>> performGetAllAccounts(
   Database database,
 ) {
   final query = '''
-SELECT * FROM accounts;
+SELECT * from Accounts
 ''';
-  return _readQuery(database, query, (d) => GetAllAccountRow(d));
+  return _readQuery(database, query, (d) => GetAllAccountsRow(d));
 }
 
-class GetAllAccountRow extends SqliteRow {
-  GetAllAccountRow(Map<String, dynamic> data) : super(data);
-
-  int get id => data['ID'] as int;
-  String get name => data['Name'] as String;
-  String get type => data['Type'] as String;
-  int get balance => data['Balance'] as int;
+class GetAllAccountsRow extends SqliteRow {
+  GetAllAccountsRow(Map<String, dynamic> data) : super(data);
 }
 
-/// END GETALLACCOUNT
+/// END GETALLACCOUNTS
