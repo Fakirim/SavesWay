@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "271887994255",
+    "project_id": "savesway-9ff10",
+    "storage_bucket": "savesway-9ff10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271887994255:android:5c767bca01429873218ffa",
+        "android_client_info": {
+          "package_name": "xyz.kinana.savesway"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDki9yt3QZybYMMVdU6_xoOgw71ebyttv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
