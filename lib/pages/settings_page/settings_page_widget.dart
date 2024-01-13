@@ -1,13 +1,15 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'settings_page_model.dart';
 export 'settings_page_model.dart';
 
 class SettingsPageWidget extends StatefulWidget {
-  const SettingsPageWidget({super.key});
+  const SettingsPageWidget({Key? key}) : super(key: key);
 
   @override
   _SettingsPageWidgetState createState() => _SettingsPageWidgetState();
@@ -62,11 +64,11 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                   fontSize: 22.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
-        body: const SafeArea(
+        body: SafeArea(
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,

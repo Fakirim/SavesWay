@@ -2,12 +2,14 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'add_transaction_component_model.dart';
 export 'add_transaction_component_model.dart';
 
 class AddTransactionComponentWidget extends StatefulWidget {
-  const AddTransactionComponentWidget({super.key});
+  const AddTransactionComponentWidget({Key? key}) : super(key: key);
 
   @override
   _AddTransactionComponentWidgetState createState() =>
@@ -47,7 +49,7 @@ class _AddTransactionComponentWidgetState
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
-      child: const SizedBox(
+      child: Container(
         width: double.infinity,
         height: double.infinity,
         child: custom_widgets.NumericKeypadWidget(

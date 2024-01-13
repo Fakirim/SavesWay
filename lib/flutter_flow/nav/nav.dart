@@ -1,12 +1,19 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
+import '/backend/schema/structs/index.dart';
 
 import '/index.dart';
 import '/main.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -31,40 +38,40 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => const NavBarPage(),
+      errorBuilder: (context, state) => NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => const NavBarPage(),
+          builder: (context, _) => NavBarPage(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'HomePage')
-              : const HomePageWidget(),
+              ? NavBarPage(initialPage: 'HomePage')
+              : HomePageWidget(),
         ),
         FFRoute(
           name: 'BudgetPage',
           path: '/budgetPage',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'BudgetPage')
-              : const BudgetPageWidget(),
+              ? NavBarPage(initialPage: 'BudgetPage')
+              : BudgetPageWidget(),
         ),
         FFRoute(
           name: 'AccountPage',
           path: '/accountPage',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'AccountPage')
-              : const AccountPageWidget(),
+              ? NavBarPage(initialPage: 'AccountPage')
+              : AccountPageWidget(),
         ),
         FFRoute(
           name: 'SettingsPage',
           path: '/settingsPage',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'SettingsPage')
-              : const SettingsPageWidget(),
+              ? NavBarPage(initialPage: 'SettingsPage')
+              : SettingsPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -227,7 +234,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

@@ -1,13 +1,15 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'budget_page_model.dart';
 export 'budget_page_model.dart';
 
 class BudgetPageWidget extends StatefulWidget {
-  const BudgetPageWidget({super.key});
+  const BudgetPageWidget({Key? key}) : super(key: key);
 
   @override
   _BudgetPageWidgetState createState() => _BudgetPageWidgetState();
@@ -62,11 +64,11 @@ class _BudgetPageWidgetState extends State<BudgetPageWidget> {
                   fontSize: 22.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
-        body: const SafeArea(
+        body: SafeArea(
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,

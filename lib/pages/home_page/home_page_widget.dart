@@ -2,15 +2,17 @@ import '/components/add_transaction_component_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
 class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({super.key});
+  const HomePageWidget({Key? key}) : super(key: key);
 
   @override
   _HomePageWidgetState createState() => _HomePageWidgetState();
@@ -63,14 +65,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   return Dialog(
                     insetPadding: EdgeInsets.zero,
                     backgroundColor: Colors.transparent,
-                    alignment: const AlignmentDirectional(0.0, 0.0)
+                    alignment: AlignmentDirectional(0.0, 0.0)
                         .resolve(Directionality.of(context)),
                     child: GestureDetector(
                       onTap: () => _model.unfocusNode.canRequestFocus
                           ? FocusScope.of(context)
                               .requestFocus(_model.unfocusNode)
                           : FocusScope.of(context).unfocus(),
-                      child: const AddTransactionComponentWidget(),
+                      child: AddTransactionComponentWidget(),
                     ),
                   );
                 },
@@ -88,7 +90,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,10 +116,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -134,7 +136,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       FormFieldController<String>(
                                     _model.dropDownValue ??= 'this week',
                                   ),
-                                  options: const [
+                                  options: [
                                     'today',
                                     'this week',
                                     'this month',
@@ -156,7 +158,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 2.0,
                                   borderRadius: 0.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 0.0, 0.0),
                                   hidesUnderline: true,
                                   isSearchable: false,
@@ -214,7 +216,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                   ],
                 ),
-              ].addToStart(const SizedBox(height: 16.0)),
+              ].addToStart(SizedBox(height: 16.0)),
             ),
           ),
         ),

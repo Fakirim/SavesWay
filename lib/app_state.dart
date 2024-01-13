@@ -104,205 +104,205 @@ class FFAppState extends ChangeNotifier {
 
   List<CategoriesStruct> _categories = [];
   List<CategoriesStruct> get categories => _categories;
-  set categories(List<CategoriesStruct> value) {
-    _categories = value;
+  set categories(List<CategoriesStruct> _value) {
+    _categories = _value;
     prefs.setStringList(
-        'ff_categories', value.map((x) => x.serialize()).toList());
+        'ff_categories', _value.map((x) => x.serialize()).toList());
   }
 
-  void addToCategories(CategoriesStruct value) {
-    _categories.add(value);
-    prefs.setStringList(
-        'ff_categories', _categories.map((x) => x.serialize()).toList());
-  }
-
-  void removeFromCategories(CategoriesStruct value) {
-    _categories.remove(value);
+  void addToCategories(CategoriesStruct _value) {
+    _categories.add(_value);
     prefs.setStringList(
         'ff_categories', _categories.map((x) => x.serialize()).toList());
   }
 
-  void removeAtIndexFromCategories(int index) {
-    _categories.removeAt(index);
+  void removeFromCategories(CategoriesStruct _value) {
+    _categories.remove(_value);
+    prefs.setStringList(
+        'ff_categories', _categories.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromCategories(int _index) {
+    _categories.removeAt(_index);
     prefs.setStringList(
         'ff_categories', _categories.map((x) => x.serialize()).toList());
   }
 
   void updateCategoriesAtIndex(
-    int index,
+    int _index,
     CategoriesStruct Function(CategoriesStruct) updateFn,
   ) {
-    _categories[index] = updateFn(_categories[index]);
+    _categories[_index] = updateFn(_categories[_index]);
     prefs.setStringList(
         'ff_categories', _categories.map((x) => x.serialize()).toList());
   }
 
-  void insertAtIndexInCategories(int index, CategoriesStruct value) {
-    _categories.insert(index, value);
+  void insertAtIndexInCategories(int _index, CategoriesStruct _value) {
+    _categories.insert(_index, _value);
     prefs.setStringList(
         'ff_categories', _categories.map((x) => x.serialize()).toList());
   }
 
   List<TransactionsStruct> _transactions = [];
   List<TransactionsStruct> get transactions => _transactions;
-  set transactions(List<TransactionsStruct> value) {
-    _transactions = value;
+  set transactions(List<TransactionsStruct> _value) {
+    _transactions = _value;
     prefs.setStringList(
-        'ff_transactions', value.map((x) => x.serialize()).toList());
+        'ff_transactions', _value.map((x) => x.serialize()).toList());
   }
 
-  void addToTransactions(TransactionsStruct value) {
-    _transactions.add(value);
-    prefs.setStringList(
-        'ff_transactions', _transactions.map((x) => x.serialize()).toList());
-  }
-
-  void removeFromTransactions(TransactionsStruct value) {
-    _transactions.remove(value);
+  void addToTransactions(TransactionsStruct _value) {
+    _transactions.add(_value);
     prefs.setStringList(
         'ff_transactions', _transactions.map((x) => x.serialize()).toList());
   }
 
-  void removeAtIndexFromTransactions(int index) {
-    _transactions.removeAt(index);
+  void removeFromTransactions(TransactionsStruct _value) {
+    _transactions.remove(_value);
+    prefs.setStringList(
+        'ff_transactions', _transactions.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromTransactions(int _index) {
+    _transactions.removeAt(_index);
     prefs.setStringList(
         'ff_transactions', _transactions.map((x) => x.serialize()).toList());
   }
 
   void updateTransactionsAtIndex(
-    int index,
+    int _index,
     TransactionsStruct Function(TransactionsStruct) updateFn,
   ) {
-    _transactions[index] = updateFn(_transactions[index]);
+    _transactions[_index] = updateFn(_transactions[_index]);
     prefs.setStringList(
         'ff_transactions', _transactions.map((x) => x.serialize()).toList());
   }
 
-  void insertAtIndexInTransactions(int index, TransactionsStruct value) {
-    _transactions.insert(index, value);
+  void insertAtIndexInTransactions(int _index, TransactionsStruct _value) {
+    _transactions.insert(_index, _value);
     prefs.setStringList(
         'ff_transactions', _transactions.map((x) => x.serialize()).toList());
   }
 
   List<BudgetsStruct> _budgets = [];
   List<BudgetsStruct> get budgets => _budgets;
-  set budgets(List<BudgetsStruct> value) {
-    _budgets = value;
+  set budgets(List<BudgetsStruct> _value) {
+    _budgets = _value;
     prefs.setStringList(
-        'ff_budgets', value.map((x) => x.serialize()).toList());
+        'ff_budgets', _value.map((x) => x.serialize()).toList());
   }
 
-  void addToBudgets(BudgetsStruct value) {
-    _budgets.add(value);
-    prefs.setStringList(
-        'ff_budgets', _budgets.map((x) => x.serialize()).toList());
-  }
-
-  void removeFromBudgets(BudgetsStruct value) {
-    _budgets.remove(value);
+  void addToBudgets(BudgetsStruct _value) {
+    _budgets.add(_value);
     prefs.setStringList(
         'ff_budgets', _budgets.map((x) => x.serialize()).toList());
   }
 
-  void removeAtIndexFromBudgets(int index) {
-    _budgets.removeAt(index);
+  void removeFromBudgets(BudgetsStruct _value) {
+    _budgets.remove(_value);
+    prefs.setStringList(
+        'ff_budgets', _budgets.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromBudgets(int _index) {
+    _budgets.removeAt(_index);
     prefs.setStringList(
         'ff_budgets', _budgets.map((x) => x.serialize()).toList());
   }
 
   void updateBudgetsAtIndex(
-    int index,
+    int _index,
     BudgetsStruct Function(BudgetsStruct) updateFn,
   ) {
-    _budgets[index] = updateFn(_budgets[index]);
+    _budgets[_index] = updateFn(_budgets[_index]);
     prefs.setStringList(
         'ff_budgets', _budgets.map((x) => x.serialize()).toList());
   }
 
-  void insertAtIndexInBudgets(int index, BudgetsStruct value) {
-    _budgets.insert(index, value);
+  void insertAtIndexInBudgets(int _index, BudgetsStruct _value) {
+    _budgets.insert(_index, _value);
     prefs.setStringList(
         'ff_budgets', _budgets.map((x) => x.serialize()).toList());
   }
 
   List<AccountsStruct> _accounts = [];
   List<AccountsStruct> get accounts => _accounts;
-  set accounts(List<AccountsStruct> value) {
-    _accounts = value;
+  set accounts(List<AccountsStruct> _value) {
+    _accounts = _value;
     prefs.setStringList(
-        'ff_accounts', value.map((x) => x.serialize()).toList());
+        'ff_accounts', _value.map((x) => x.serialize()).toList());
   }
 
-  void addToAccounts(AccountsStruct value) {
-    _accounts.add(value);
-    prefs.setStringList(
-        'ff_accounts', _accounts.map((x) => x.serialize()).toList());
-  }
-
-  void removeFromAccounts(AccountsStruct value) {
-    _accounts.remove(value);
+  void addToAccounts(AccountsStruct _value) {
+    _accounts.add(_value);
     prefs.setStringList(
         'ff_accounts', _accounts.map((x) => x.serialize()).toList());
   }
 
-  void removeAtIndexFromAccounts(int index) {
-    _accounts.removeAt(index);
+  void removeFromAccounts(AccountsStruct _value) {
+    _accounts.remove(_value);
+    prefs.setStringList(
+        'ff_accounts', _accounts.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromAccounts(int _index) {
+    _accounts.removeAt(_index);
     prefs.setStringList(
         'ff_accounts', _accounts.map((x) => x.serialize()).toList());
   }
 
   void updateAccountsAtIndex(
-    int index,
+    int _index,
     AccountsStruct Function(AccountsStruct) updateFn,
   ) {
-    _accounts[index] = updateFn(_accounts[index]);
+    _accounts[_index] = updateFn(_accounts[_index]);
     prefs.setStringList(
         'ff_accounts', _accounts.map((x) => x.serialize()).toList());
   }
 
-  void insertAtIndexInAccounts(int index, AccountsStruct value) {
-    _accounts.insert(index, value);
+  void insertAtIndexInAccounts(int _index, AccountsStruct _value) {
+    _accounts.insert(_index, _value);
     prefs.setStringList(
         'ff_accounts', _accounts.map((x) => x.serialize()).toList());
   }
 
   List<HeadCategoryStruct> _headCategory = [];
   List<HeadCategoryStruct> get headCategory => _headCategory;
-  set headCategory(List<HeadCategoryStruct> value) {
-    _headCategory = value;
+  set headCategory(List<HeadCategoryStruct> _value) {
+    _headCategory = _value;
     prefs.setStringList(
-        'ff_headCategory', value.map((x) => x.serialize()).toList());
+        'ff_headCategory', _value.map((x) => x.serialize()).toList());
   }
 
-  void addToHeadCategory(HeadCategoryStruct value) {
-    _headCategory.add(value);
-    prefs.setStringList(
-        'ff_headCategory', _headCategory.map((x) => x.serialize()).toList());
-  }
-
-  void removeFromHeadCategory(HeadCategoryStruct value) {
-    _headCategory.remove(value);
+  void addToHeadCategory(HeadCategoryStruct _value) {
+    _headCategory.add(_value);
     prefs.setStringList(
         'ff_headCategory', _headCategory.map((x) => x.serialize()).toList());
   }
 
-  void removeAtIndexFromHeadCategory(int index) {
-    _headCategory.removeAt(index);
+  void removeFromHeadCategory(HeadCategoryStruct _value) {
+    _headCategory.remove(_value);
+    prefs.setStringList(
+        'ff_headCategory', _headCategory.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromHeadCategory(int _index) {
+    _headCategory.removeAt(_index);
     prefs.setStringList(
         'ff_headCategory', _headCategory.map((x) => x.serialize()).toList());
   }
 
   void updateHeadCategoryAtIndex(
-    int index,
+    int _index,
     HeadCategoryStruct Function(HeadCategoryStruct) updateFn,
   ) {
-    _headCategory[index] = updateFn(_headCategory[index]);
+    _headCategory[_index] = updateFn(_headCategory[_index]);
     prefs.setStringList(
         'ff_headCategory', _headCategory.map((x) => x.serialize()).toList());
   }
 
-  void insertAtIndexInHeadCategory(int index, HeadCategoryStruct value) {
-    _headCategory.insert(index, value);
+  void insertAtIndexInHeadCategory(int _index, HeadCategoryStruct _value) {
+    _headCategory.insert(_index, _value);
     prefs.setStringList(
         'ff_headCategory', _headCategory.map((x) => x.serialize()).toList());
   }
